@@ -13,10 +13,12 @@ Please follow the below procedure.
 Firstly, install Python.
 
   1. Download latest `.exe` of Python from [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/).  
-  If Windows 10, please click `Windows x86-64 executable installer` in that page.
+  If Windows 10, please click `Windows x86-64 executable installer` in that page.  
+  <img src="https://github.com/Shimamura-Lab-SU/How-to-setting-Python/blob/master/python_page.jpg" width="500px">
   
   2. Execute downloaded `.exe` file.  
-  When wondow is opened, **Must turn on check box of `Add Python 3.X to Path`!** And click `Install Now`.
+  When wondow is opened, **Must turn on check box of `Add Python 3.X to Path`!** And click `Install Now`.  
+  <img src="https://github.com/Shimamura-Lab-SU/How-to-setting-Python/blob/master/python_path.jpg" width="500px">
   
 ### 2.  PyCharm Installation
 
@@ -31,3 +33,4 @@ Next, install PyCharm that is an strong development environment.
 
 ### 4.  Python Module Installation
 
+  1. 
