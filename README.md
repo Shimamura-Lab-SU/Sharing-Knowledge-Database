@@ -1,6 +1,6 @@
 # How to install Python
 
-This repository explains how to install Python in Windows PC.  
+This repository explains how to install Python and development environment (PyCharm) in Windows PC.  
 This is for **Sharing Knowledge in [Shimamura Laboratory](http://www.sie.ics.saitama-u.ac.jp)**.
 
 # Procedure of Installation
