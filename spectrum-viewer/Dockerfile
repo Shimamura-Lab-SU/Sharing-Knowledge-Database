@@ -1,6 +1,3 @@
-# Just Upload & Plot. Easy visualize tool via http.
-# Usage: docker run -d -p 8880:8880 u1and0/uplot
-
 FROM python:3.6
 RUN apk --update-cache \
     add musl \
