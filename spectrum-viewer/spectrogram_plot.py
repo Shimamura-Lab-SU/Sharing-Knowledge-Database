@@ -180,4 +180,4 @@ def update_output(list_of_contents, xaxis_type, yaxis_type,
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=8880)
+    app.run_server(port=8880)
