@@ -11,7 +11,11 @@ RUN apk --update-cache \
     gfortran \
     openblas-dev
 RUN pip install --upgrade pip &&\
-    pip install pandas \
+    pip install numpy \
+                cffi \
+                pysoundfile \
+                librosa \
+                scipy \
                 flask \
                 dash \
                 plotly
@@ -20,7 +24,7 @@ COPY ./uplot.py /usr/bin/uplot
 RUN chmod +x /usr/bin/uplot
 CMD ["/usr/bin/uplot"]
 
-LABEL maintainer="u1and0 <e01.ando60@gmail.com>" \
+LABEL maintainer="spectrogram <ysugiura@mail.saitaam-u.ac.jp>" \
       description="Spectrogram Viewer" \
       description.ja="Spectrogram Viewer" \
       version="uplot:v2.0.0" \
