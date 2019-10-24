@@ -7,9 +7,7 @@ RUN apk --update-cache \
     linux-headers \
     gcc \
     g++ \
-    make \
-    gfortran \
-    openblas-dev
+    make 
 RUN pip install --upgrade pip &&\
     pip install numpy \
                 cffi \
