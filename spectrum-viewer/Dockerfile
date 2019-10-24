@@ -18,8 +18,8 @@ RUN pip install --upgrade pip &&\
                 dash \
                 plotly
 
-COPY ./uplot.py /usr/bin/uplot
-RUN chmod +x /usr/bin/uplot
+COPY ./spectrogram_plot.py /usr/bin/spectrogram
+RUN chmod +x /usr/bin/spectrogram
 CMD ["/usr/bin/uplot"]
 
 LABEL maintainer="spectrogram <ysugiura@mail.saitaam-u.ac.jp>" \
