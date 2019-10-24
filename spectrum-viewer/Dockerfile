@@ -20,7 +20,7 @@ RUN pip install --upgrade pip &&\
 
 COPY ./spectrogram_plot.py /usr/bin/spectrogram
 RUN chmod +x /usr/bin/spectrogram
-CMD ["/usr/bin/uplot"]
+CMD ["/usr/bin/spectrogram"]
 
 LABEL maintainer="spectrogram <ysugiura@mail.saitaam-u.ac.jp>" \
       description="Spectrogram Viewer" \
