@@ -2,10 +2,7 @@
 
 島村研究室内で知識を共有するためのデータベース(メモ程度)です．
 
-# コンテンツ
+### 基本的には Github wiki を見てください．
 
-- Pythonのインストール関連
-  - 
-  
-- システム管理者用の共有メモ
-  - 停電時のメールサーバの対応
+島村研知識データベース Github Wiki  
+[https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki)
