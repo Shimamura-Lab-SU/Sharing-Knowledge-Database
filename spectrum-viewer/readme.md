@@ -26,7 +26,7 @@ wavファイルのスペクトルを**無料**で見るための最強ツール�
 - dash-daq
 - Flask
 - gunicorn
-
+- mod-wsgi
 
 ## Webアプリの起動法
 
