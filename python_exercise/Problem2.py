@@ -23,14 +23,12 @@ if __name__ == '__main__':
     ##  音源分離処理をやってみよう！
 
     #   (wavファイルのダウンロード) ← ローカルへ保存していたら必要なし
-    urllib.request.urlretrieve('https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/stereo.wav', 'stereo.wav')
+    urllib.request.urlretrieve('https://raw.githubusercontent.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/master/python_exercise/stereo.wav', 'stereo.wav')
 
     #   wavファイルの読み込み
     wav_data, fs = sf.read('stereo.wav')  # (データ, サンプリング周波数)
-    # x_l = wav_data[:,0]           # 左チャンネル
-    # x_r = wav_data[:,1]           # 右チャンネル
-    x_l = wav_data
-    x_r = wav_data
+    x_l = wav_data[:,0]           # 左チャンネル
+    x_r = wav_data[:,1]           # 右チャンネル
 
     #   フレーム分割 & FFT (ハーフオーバーラップ)
     #   - x_l, x_r を sg.stft で短時間FFTする．
@@ -44,7 +42,7 @@ if __name__ == '__main__':
     Amp_r = np.abs(X_r)
 
     #   スペクトログラム (処理前)
-    Amp_l_log = 2 * np.log10(Amp_l)     # 対数振幅スペクトルに変換
+    Amp_l_log = 2 * np.log10(Amp_l+10**(-5))     # 対数振幅スペクトルに変換
     plt.figure('Spectrogram : 処理前')
     plt.imshow(Amp_l_log, aspect='auto', origin='lower', cmap='jet', interpolation='bilinear', extent=[t.min() / fs, t.max() / fs, fs * f.min(), fs * f.max()])
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Origin (L)')
@@ -52,7 +50,7 @@ if __name__ == '__main__':
     #   スペクトログラムに対する音源分離処理
     Amp_l_new = []
     Amp_r_new = []
-    for (amp_l, amp_r) in zip(Amp_l, Amp_r):  # Amp_lとAmp_rの各フレームを同時に取り出し
+    for (amp_l, amp_r) in zip(Amp_l.T, Amp_r.T):  # Amp_lとAmp_rの各フレームを同時に取り出し
 
         # ↓↓ バイナリマスキング
 
@@ -62,8 +60,11 @@ if __name__ == '__main__':
         Amp_l_new.append(amp_l)
         Amp_r_new.append(amp_r)
 
+    Amp_l_new = np.array(Amp_l_new).T   # numpy.arrayに変換 & 転置
+    Amp_r_new = np.array(Amp_r_new).T   # numpy.arrayに変換 & 転置
+
     #   スペクトログラム (処理後)
-    Amp_l_log_new = 2 * np.log10(Amp_l_new)  # 対数振幅スペクトルに変換
+    Amp_l_log_new = 2 * np.log10(Amp_l_new+10**(-5))  # 対数振幅スペクトルに変換
     plt.figure('Spectrogram : 処理後')
     plt.imshow(Amp_l_log_new, aspect='auto', origin='lower', cmap='jet', interpolation='bilinear', extent=[t.min() / fs, t.max() / fs, fs * f.min(), fs * f.max()])
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Output (L)')
@@ -71,10 +72,14 @@ if __name__ == '__main__':
 
     #   スペクトルゲイン法
     X_l_new = np.array(Amp_l_new) / Amp_l * X_l
+    X_r_new = np.array(Amp_r_new) / Amp_r * X_r
 
     #   逆FFTで波形に変換 & wav に保存
-    _, x_new = sg.istft(X_l_new, fs=fs, noverlap=int(1024/2))
-    sf.write('output.wav', x_new, fs)
+    _, x_l_new = sg.istft(X_l_new, fs=fs, noverlap=int(1024/2))
+    sf.write('output_L.wav', x_l_new, fs)
+
+    _, x_r_new = sg.istft(X_r_new, fs=fs, noverlap=int(1024/2))
+    sf.write('output_R.wav', x_r_new, fs)
 
     ##  応用問題1．
     ##  stftのフレーム長を2048，オーバーラップを2048 * 3/4 に設定して処理を行い，
