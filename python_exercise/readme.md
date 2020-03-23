@@ -29,9 +29,10 @@ Pythonはインタプリタ言語の一つで，マルチプラットフォー�
 
 ## 講義の進め方
 
-<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/procedure.png" width="550px">  
 はじめに，各回の説明文(readme)をざっと流し読みしてください．  
 次に，`ex*_blank.py`をダウンロード or 自力で自分の環境にコピーして，`ex*.py`と同じ内容になるようにスクラッチしましょう．  
 それができたら，`Problem*.py`をダウンロード or 自力で自分の環境にコピーして，自分で考えてスクラッチしましょう．
 
 重要なことは，**よくわからないことが出てきたら，基本的にネットで検索して解決する**ことです．
+
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/procedure.png" width="550px">  
