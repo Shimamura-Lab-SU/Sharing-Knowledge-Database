@@ -33,8 +33,8 @@ if __name__ == '__main__':
     #   フレーム分割 & FFT (ハーフオーバーラップ)
     #   - x_l, x_r を sg.stft で短時間FFTする．
     #   - セグメント長を 1024, オーバーラップを 512 に設定する．
-    f, t, X_l = sg.stft(x_l, nperseg=1024, noverlap=int(1024/2))
-    _, _, X_r = sg.stft(x_r, nperseg=1024, noverlap=int(1024/2))
+    f, t, X_l = sg.stft()
+    _, _, X_r = sg.stft()
 
     #   振幅情報だけを抽出
     #   - np.abs() で振幅を抽出する．
@@ -70,16 +70,15 @@ if __name__ == '__main__':
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Output (L)')
     plt.show()
 
-    #   スペクトルゲイン法
-    X_l_new = np.array(Amp_l_new) / Amp_l * X_l
-    X_r_new = np.array(Amp_r_new) / Amp_r * X_r
+    #   ↓↓ スペクトルゲイン法
+    X_l_new = X_l
+    X_r_new = X_r
+    #   ↑↑ スペクトルゲイン法
 
-    #   逆FFTで波形に変換 & wav に保存
-    _, x_l_new = sg.istft(X_l_new, fs=fs, noverlap=int(1024/2))
-    sf.write('output_L.wav', x_l_new, fs)
+    #   ↓↓ 逆FFTで波形に変換 & wav に保存
 
-    _, x_r_new = sg.istft(X_r_new, fs=fs, noverlap=int(1024/2))
-    sf.write('output_R.wav', x_r_new, fs)
+
+    #   ↑↑ 逆FFTで波形に変換 & wav に保存
 
     ##  応用問題1．
     ##  stftのフレーム長を2048，オーバーラップを2048 * 3/4 に設定して処理を行い，
