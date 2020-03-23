@@ -164,4 +164,4 @@ Array[:,1]		# 1列目の全ての要素 ← この指定の方法はリストで
 # for文
 
 このページなどを参考にしてください．  
-https://qiita.com/Morio/items/e8aed85346c0055beea7
+https://programming-study.com/technology/python-for/
