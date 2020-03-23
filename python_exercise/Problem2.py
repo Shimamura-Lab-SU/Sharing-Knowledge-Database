@@ -23,10 +23,10 @@ if __name__ == '__main__':
     ##  音源分離処理をやってみよう！
 
     #   (wavファイルのダウンロード) ← ローカルへ保存していたら必要なし
-    urllib.request.urlretrieve('https://raw.githubusercontent.com/julius-speech/segmentation-kit/master/wav/sample.wav', 'sample.wav')
+    urllib.request.urlretrieve('https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/stereo.wav', 'stereo.wav')
 
     #   wavファイルの読み込み
-    wav_data, fs = sf.read('sample.wav')  # (データ, サンプリング周波数)
+    wav_data, fs = sf.read('stereo.wav')  # (データ, サンプリング周波数)
     # x_l = wav_data[:,0]           # 左チャンネル
     # x_r = wav_data[:,1]           # 右チャンネル
     x_l = wav_data
