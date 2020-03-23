@@ -28,10 +28,8 @@ if __name__ == '__main__':
 
     #   wavファイルの読み込み
     wav_data, fs = sf.read('stereo.wav')  # (データ, サンプリング周波数)
-    # x_l = wav_data[:,0]           # 左チャンネル
-    # x_r = wav_data[:,1]           # 右チャンネル
-    x_l = wav_data
-    x_r = wav_data
+    x_l = wav_data[:,0]           # 左チャンネル
+    x_r = wav_data[:,1]           # 右チャンネル
 
     #   フレーム分割 & FFT (ハーフオーバーラップ)
     #   - x_l, x_r を sg.stft で短時間FFTする．
@@ -53,13 +51,11 @@ if __name__ == '__main__':
     #   スペクトログラムに対する音源分離処理
     Amp_l_new = []
     Amp_r_new = []
-    Amp_l = Amp_l.T
     for (amp_l, amp_r) in zip(Amp_l.T, Amp_r.T):  # Amp_lとAmp_rの各フレームのスペクトルを同時に取り出し
-    
-        print(amp_l.shape)
+
         # ↓↓ バイナリマスキング
-        index_l =  (amp_l  >= amp_r)		# 右チャンネルより左チャンネルの振幅が大きいとTrue
-        index_r = (amp_r  >= amp_l) 		# 左チャンネルより右チャンネルの振幅が大きいとTrue
+        index_l = (amp_l  >= amp_r)		# 右チャンネルより左チャンネルの振幅が大きいとTrue
+        index_r = (amp_r  >= amp_l)     # 左チャンネルより右チャンネルの振幅が大きいとTrue
         # index_* が True になる周波数の振幅 → そのまま
         # index_* が False になる周波数の振幅 → 0
         amp_l = amp_l * index_l			# 左チャンネル
@@ -80,16 +76,18 @@ if __name__ == '__main__':
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Output (L)')
     plt.show()
 
-    #   スペクトルゲイン法
+    #   ↓↓ スペクトルゲイン法
     X_l_new = np.array(Amp_l_new) / Amp_l * X_l
     X_r_new = np.array(Amp_r_new) / Amp_r * X_r
+    #   ↑↑ スペクトルゲイン法
 
-    #   逆FFTで波形に変換 & wav に保存
+    #   ↓↓ 逆FFTで波形に変換 & wav に保存
     _, x_l_new = sg.istft(X_l_new, fs=fs, noverlap=int(2048*3/4))
     sf.write('output_L.wav', x_l_new, fs)
 
     _, x_r_new = sg.istft(X_r_new, fs=fs, noverlap=int(2048*3/4))
     sf.write('output_R.wav', x_r_new, fs)
+    #   ↑↑ 逆FFTで波形に変換 & wav に保存
 
     ##  応用問題1．
     ##  stftのフレーム長を2048，オーバーラップを2048 * 3/4 に設定して処理を行い，
