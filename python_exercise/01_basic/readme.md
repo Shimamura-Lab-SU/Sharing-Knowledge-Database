@@ -3,6 +3,7 @@
 - [import文](#import文)
 - [リストとnumpy配列](#リストとnumpy配列)
 - [for文](#for文)
+- [内包表記](#内包表記)
 
 # import文
 
@@ -165,3 +166,8 @@ Array[:,1]		# 1列目の全ての要素 ← この指定の方法はリストで
 
 このページなどを参考にしてください．  
 https://programming-study.com/technology/python-for/
+
+# 内包表記
+
+このページなどを参考にしてください．  
+https://note.nkmk.me/python-list-comprehension/
