@@ -4,6 +4,7 @@
 - [リストとnumpy配列](#リストとnumpy配列)
 - [for文](#for文)
 - [内包表記](#内包表記)
+- [デバッグ方法](#デバッグ方法)
 
 # import文
 
@@ -171,3 +172,7 @@ https://programming-study.com/technology/python-for/
 
 このページなどを参考にしてください．  
 https://note.nkmk.me/python-list-comprehension/
+
+# デバッグ方法
+
+Pycharmを利用したデバッグを説明します．
