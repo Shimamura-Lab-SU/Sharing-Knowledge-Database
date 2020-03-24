@@ -15,7 +15,7 @@ Pythonはインタプリタ言語の一つで，マルチプラットフォー�
   
   第1回：[Pythonの基本的な関数の使い方](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/01_basic)
   
-  第2回：[データの読み込み・書き出しとデバッグ](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/02_IO_debug)
+  第2回：[データの読み込み・書き出しとデバッグ](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/02_IO)
   
   第3回：[関数・クラスの定義と使い方](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/03_def_class)
   
