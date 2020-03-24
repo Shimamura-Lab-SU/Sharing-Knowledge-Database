@@ -27,14 +27,18 @@ if __name__ == '__main__':
 
     #   wavファイルの読み込み
     wav_data, fs = sf.read('stereo.wav')  # (データ, サンプリング周波数)
-    x_l = wav_data[:,0]           # 左チャンネル
-    x_r = wav_data[:,1]           # 右チャンネル
+    # ↓↓ 右チャンネルと左チャンネルの取り出し (イコール以降を修正すること)
+    x_l = []           # 左チャンネル
+    x_r = []           # 右チャンネル
+    # ↑↑ 右チャンネルと左チャンネルの取り出し
 
-    #   フレーム分割 & FFT (ハーフオーバーラップ)
-    #   - x_l, x_r を sg.stft で短時間FFTする．
+    #   フレーム分割 & STFT
+    #   - x_l, x_r をそれぞれ sg.stft で短時間FFTする．
     #   - セグメント長を 1024, オーバーラップを 512 に設定する．
+    # ↓↓ STFT  (イコール以降を修正すること)
     f, t, X_l = sg.stft()
     _, _, X_r = sg.stft()
+    # ↑↑ STFT
 
     #   振幅情報だけを抽出
     #   - np.abs() で振幅を抽出する．
@@ -52,7 +56,7 @@ if __name__ == '__main__':
     Amp_r_new = []
     for (amp_l, amp_r) in zip(Amp_l.T, Amp_r.T):  # Amp_lとAmp_rの各フレームを同時に取り出し
 
-        # ↓↓ バイナリマスキング
+        # ↓↓ バイナリマスキング 
 
         # ↑↑ バイナリマスキング
 
@@ -70,7 +74,7 @@ if __name__ == '__main__':
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Output (L)')
     plt.show()
 
-    #   ↓↓ スペクトルゲイン法
+    #   ↓↓ スペクトルゲイン法  (イコール以降を修正すること)
     X_l_new = X_l
     X_r_new = X_r
     #   ↑↑ スペクトルゲイン法
