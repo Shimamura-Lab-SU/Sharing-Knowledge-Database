@@ -1,4 +1,4 @@
-# 第１回 Pythonの基本的な関数の使い方
+# 第１回 Pythonの基本的な関数の使い方とデバッグ方法
 
 - [import文](#import文)
 - [リストとnumpy配列](#リストとnumpy配列)
