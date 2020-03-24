@@ -81,7 +81,7 @@ if __name__ == '__main__':
     ##  応用問題1.
     ##  Ex_array を(7,16)のサイズに変形せよ．
     ##  ただし，足りない要素は0で埋める．
-    ##  (ヒント) ndarray の resize を使う．
+    ##  (ヒント) numpy.ndarray の resize を使う．
 
     A = np.array(Ex_array)
     A.resize((7, 16))
