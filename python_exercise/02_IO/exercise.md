@@ -40,7 +40,7 @@
 図はウィンドウィングとオーバーラップの例です．各フレームに両端が滑らかに減衰するハミング窓を書けたあと，処理を加えます．
 処理されたフレームは，半分ずつずらして加算(=ハーフオーバーラップ)して連続音声を復元します．
 
-<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/processing.png" width="550px">  
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/processing.png" width="580px">  
 
 ### 3. 周波数マスキング
 
