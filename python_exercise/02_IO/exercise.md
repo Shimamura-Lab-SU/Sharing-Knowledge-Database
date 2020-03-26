@@ -31,6 +31,8 @@
 フレーム処理は基本的な音声処理手順の１つです．
 音声を短い時間区間(=**フレーム**)に分割して，フレームごとに音声に処理を加えます．
 
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/framing.png" width="450px">  
+
 ### 2. ウィンドウィング (窓関数処理) とオーバーラップ
 
 処理した音声を，もとの連続音声に戻す際に，フレーム間のつなぎ目が不連続になることがあります．
@@ -38,9 +40,10 @@
 図はウィンドウィングとオーバーラップの例です．各フレームに両端が滑らかに減衰するハミング窓を書けたあと，処理を加えます．
 処理されたフレームは，半分ずつずらして加算(=ハーフオーバーラップ)して連続音声を復元します．
 
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/processing.png" width="550px">  
+
 ### 3. 周波数マスキング
 
 さて，フレーム分割した音声にはどのような処理を加えるのでしょうか？
 一つの例として，音声を周波数領域に変換し，いらない周波数成分を取り除く**フィルタ処理**をよく行います．
 
-図はあるフレームにおいて
