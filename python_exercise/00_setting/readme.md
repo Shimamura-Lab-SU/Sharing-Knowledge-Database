@@ -20,7 +20,7 @@ https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/Python-Insta
 
 ## Pythonスクリプトの追加，実行
 
-1. `hello.py`を自身の環境(フォルダ)直下にダウンロード or 自分の環境にコピーする．
+1. [`hello.py`](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/00_setting/hello.py)を自身の環境(フォルダ)直下にダウンロード or フルスクラッチ する．
 
 2. タブを右クリックして，`Run`(ミドリ色の三角ボタン)を選択して実行する．
 
