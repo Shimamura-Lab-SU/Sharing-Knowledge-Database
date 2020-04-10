@@ -27,18 +27,16 @@ if __name__ == '__main__':
 
     #   wavファイルの読み込み
     wav_data, fs = sf.read('stereo.wav')  # (データ, サンプリング周波数)
-    # ↓↓ 右チャンネルと左チャンネルの取り出し (イコール以降を修正すること)
-    x_l = []           # 左チャンネル
-    x_r = []           # 右チャンネル
-    # ↑↑ 右チャンネルと左チャンネルの取り出し
+    x_l = wav_data[:,0]           # 左チャンネル
+    x_r = wav_data[:,1]           # 右チャンネル
 
-    #   フレーム分割 & STFT
-    #   - x_l, x_r をそれぞれ sg.stft で短時間FFTする．
+    #   フレーム分割 & FFT (ハーフオーバーラップ)
+    #   - x_l, x_r を sg.stft で短時間FFT(STFT)する．
     #   - セグメント長を 1024, オーバーラップを 512 に設定する．
-    # ↓↓ STFT  (イコール以降を修正すること)
+    #  ↓↓ STFT
     f, t, X_l = sg.stft()
     _, _, X_r = sg.stft()
-    # ↑↑ STFT
+    #  ↑↑ STFT
 
     #   振幅情報だけを抽出
     #   - np.abs() で振幅を抽出する．
@@ -52,32 +50,35 @@ if __name__ == '__main__':
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Origin (L)')
 
     #   スペクトログラムに対する音源分離処理
-    Amp_l_new = []
-    Amp_r_new = []
+    Mask_l = []                         # 左チャンネルのマスク
+    Mask_r = []                         # 右チャンネルのマスク
     for (amp_l, amp_r) in zip(Amp_l.T, Amp_r.T):  # Amp_lとAmp_rの各フレームを同時に取り出し
 
-        # ↓↓ バイナリマスキング 
+        # ↓↓ バイナリマスク作成
 
-        # ↑↑ バイナリマスキング
+        # ↑↑ バイナリマスク作成
 
-        # 配列に入れる
-        Amp_l_new.append(amp_l)
-        Amp_r_new.append(amp_r)
+        # ↓↓マスクを配列に入れる
+        Mask_l.append()
+        Mask_r.append()
+        # ↑↑マスクを配列に入れる
 
-    Amp_l_new = np.array(Amp_l_new).T   # numpy.arrayに変換 & 転置
-    Amp_r_new = np.array(Amp_r_new).T   # numpy.arrayに変換 & 転置
+    Mask_l = np.array(Mask_l).T   # numpy.arrayに変換 & 転置
+    Mask_r = np.array(Mask_r).T   # numpy.arrayに変換 & 転置
+
+    #   マスキング
+    X_l_new = Mask_l * X_l
+    X_r_new = Mask_r * X_r
+
+    #   振幅スペクトル (表示用：左チャンネルだけ)
+    A_l_new = np.abs(X_l_new)
 
     #   スペクトログラム (処理後)
-    Amp_l_log_new = 2 * np.log10(Amp_l_new+10**(-5))  # 対数振幅スペクトルに変換
+    Amp_l_log_new = 2 * np.log10(A_l_new+10**(-5))  # 対数振幅スペクトルに変換
     plt.figure('Spectrogram : 処理後')
     plt.imshow(Amp_l_log_new, aspect='auto', origin='lower', cmap='jet', interpolation='bilinear', extent=[t.min() / fs, t.max() / fs, fs * f.min(), fs * f.max()])
     plt.xlabel('Time [s]'); plt.ylabel('Frequency [Hz]'); plt.title('Output (L)')
     plt.show()
-
-    #   ↓↓ スペクトルゲイン法  (イコール以降を修正すること)
-    X_l_new = X_l
-    X_r_new = X_r
-    #   ↑↑ スペクトルゲイン法
 
     #   ↓↓ 逆FFTで波形に変換 & wav に保存
 
