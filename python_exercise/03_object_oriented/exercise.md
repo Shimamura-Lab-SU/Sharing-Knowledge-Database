@@ -1,22 +1,25 @@
 # 第3回 演習問題
 
-クラス・関数の定義と使い方
+クラス・関数の定義と使い方について学習しましょう．
 
 ## 練習課題
 
 > - [ex3.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/03_object_oriented/ex3.py)
 > - [ex4_blank.py](https://raw.githubusercontent.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/master/python_exercise/03_object_oriented/ex3_blank.py)
 
-     
-途中，`npy`形式ファイルが出てきます．`npy`形式とは，データ列をバイナリ化して保存したファイル形式で，他の形式と比べて読み込みや書き込みが若干高速です．
-深層学習の分野では，一般にデータをバイナリ化して保存します．
-
 ## 演習課題
 
-> - [Problem2.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/Problem2.py)
+> - [Problem3.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/03_object_oriented/Problem3.py)
 
-演習問題では，音声を読み込んで，実際に音声処理をやってみましょう！
-ここでは，**バイナリマスキングによる音源分離**を行います．
+演習問題では，画像の雑音除去の雑音除去について勉強しましょう！
+下の説明に目を通しつつ，課題に取り組みましょう．
+
+---
+# 基礎知識
+
+## 画像の雑音除去
+
+
 
 ### 1. フレーム処理
 
