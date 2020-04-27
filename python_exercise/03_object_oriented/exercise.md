@@ -5,7 +5,7 @@
 ## 練習課題
 
 > - [ex3.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/03_object_oriented/ex3.py)
-> - [ex4_blank.py](https://raw.githubusercontent.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/master/python_exercise/03_object_oriented/ex3_blank.py)
+> - [ex3_blank.py](https://raw.githubusercontent.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/master/python_exercise/03_object_oriented/ex3_blank.py)
 
 ## 演習課題
 
