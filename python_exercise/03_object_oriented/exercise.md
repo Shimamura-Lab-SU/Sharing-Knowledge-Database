@@ -26,7 +26,7 @@
 
 みなさんが学習した**フーリエ級数展開**にあるように，あらゆる信号はsin波とcos波の組み合わせ(正確には線形和)で表現できます．下の式にあるように，sin波とcos波，それぞれで基本周波数 `ω` が与えられ，その整数倍の周波数 `kω` をもつ波の足し合わせで表現されます．
 
-<img src="https://latex.codecogs.com/gif.latex?\large&space;x_n&space;=&space;\frac{a_0}{2}+ \sum^{\infty}_{k=1}&space;a_k&space;\sin&space;(k\omega&space;n)&space;&plus;&space;b_k&space;\cos(k\omega&space;n)" title="\large x_n = \frac{a_0}{2}\sum^{\infty}_{k=1} a_k \sin (k\omega n) + b_k \cos(k\omega n)" />
+<img src="https://latex.codecogs.com/gif.latex?\dpi{100}&space;\large&space;x_n&space;=&space;\frac{a_0}{2}&plus;\sum^{\infty}_{k=1}&space;a_k&space;\sin&space;(k\omega&space;n)&space;&plus;&space;b_k&space;\cos(k\omega&space;n)" title="\large x_n = \frac{a_0}{2}+\sum^{\infty}_{k=1} a_k \sin (k\omega n) + b_k \cos(k\omega n)" />
 
 このフーリエ級数展開による信号の表現は，もちろん画像でも当てはまります．
 ある画像の**バッチ**(画像の一部を方形で切り出したもの)を抽出すると，そのバッチは必ず２次元のsin波とcos波の線形和で表現できます．
