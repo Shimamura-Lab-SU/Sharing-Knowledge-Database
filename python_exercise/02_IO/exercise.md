@@ -30,7 +30,7 @@
 
 フレーム処理は基本的な音声処理手順の１つです．
 音声を短い時間区間(=**フレーム**)に分割して，フレームごとに音声に処理を加えます．
-フレームの長さ(サンプル数)は，一般的に\underline{20～50ms}となるように設定します．
+フレームの長さ(サンプル数)は，一般的に20～50msとなるように設定します．
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/framing.png" width="450px">  
 
@@ -92,6 +92,8 @@ Aさんに着目すると，Aさんの音声はマイクロホン１, マイク�
 ですので，近くにあるマイクロホン１に入力される音声のパワーは大きくなり，遠くにあるマイクロホン２に入力される音声のパワーは小さくなります．
 一方でBさんの音声はその逆に，遠くにあるマイクロホン１に入力される音声のパワーは小さくなり，遠くにあるマイクロホン２に入力される音声のパワーは大きくなります．
 
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/binary_mask.png" width="450px">  
+
 この性質を利用して音源分離を行います．
 マイクロホン
 <img src=
@@ -111,4 +113,64 @@ alt="\omega">
 alt="X^{(i)}(t,\omega)
 ">
 と表現します．
-WDOを仮定すると，$X^{(i)}(t,\omega)$はAさんあるいはBさんの音声の成分ということになります．
+話者間で周波数成分の重複はないと仮定し，<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+X%5E%7B%28i%29%7D%28t%2C%5Comega%29" 
+alt="X^{(i)}(t,\omega)">
+はAさんあるいはBさんの音声の成分とします．
+これがどちらの音声に含まれるかを判定するために，
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+X%5E%7B%281%29%7D%28t%2C%5Comega%29" 
+alt="X^{(1)}(t,\omega)">
+と
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+X%5E%7B%282%29%7D%28t%2C%5Comega%29" 
+alt="X^{(2)}(t,\omega)">
+の大きさを比較して以下の通り振り分けます．
+
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AA_1%28t%2C%5Comega%29+%3E+A_2%28t%2C%5Comega%29+%5CRightarrow+X%5E%7B%281%29%7D%28t%2C%5Comega%29%2C+X%5E%7B%282%29%7D%28t%2C%5Comega%29+%0A%5Cend%7Balign%2A%7D%0A" 
+alt="\begin{align*}
+A_1(t,\omega) > A_2(t,\omega) \Rightarrow X^{(1)}(t,\omega), X^{(2)}(t,\omega) 
+\end{align*}
+">はAさんの音声に含まれる．
+
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AA_1%28t%2C%5Comega%29+%3E+A_2%28t%2C%5Comega%29+%5CRightarrow+X%5E%7B%281%29%7D%28t%2C%5Comega%29%2C+X%5E%7B%282%29%7D%28t%2C%5Comega%29+%0A%5Cend%7Balign%2A%7D%0A" 
+alt="\begin{align*}
+A_1(t,\omega) < A_2(t,\omega) \Rightarrow X^{(1)}(t,\omega), X^{(2)}(t,\omega) 
+\end{align*}
+">はBさんの音声に含まれる．
+
+この処理を数式を用いて表現すると，以下の通りになります．
+
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Barray%7D%7Bl%7D%0ABinary+Mask+1++%3A+M_A%28t%2C+%5Comega%29+%3D+%5Cleft%5C%7B%0A%5Cbegin%7Barray%7D%7Bll%7D%0A1+%26+%2C+A_1%28t%2C%5Comega%29+%3E+A_2%28t%2C%5Comega%29+%5C%5C%0A0+%26+%2C+A_1%28t%2C%5Comega%29+%5Cleq+A_2%28t%2C%5Comega%29+%5C%5C%0A%5Cend%7Barray%7D+%5Cright.+%2C%5C%5C%0ABinary+Mask+2++%3A++M_B%28t%2C+%5Comega%29+%3D+%5Cleft%5C%7B%0A%5Cbegin%7Barray%7D%7Bll%7D%0A0+%26+%2C+A_1%28t%2C%5Comega%29+%3E+A_2%28t%2C%5Comega%29%5C%5C%0A1+%26+%2C+A_1%28t%2C%5Comega%29+%5Cleq+A_2%28t%2C%5Comega%29+%5C%5C%0A%5Cend%7Barray%7D+%5Cright.+%2C+%5C%5C%0AA%27s+Spectrum+%3A+X_A%28t%2C+%5Comega%29+%3D+M_A%28t%2C+%5Comega%29+%2A+X%5E%7B%281%29%7D%28t%2C%5Comega%29%2C+%5C%5C%0AB%27s+Spectrum+%3A+X_B%28t%2C+%5Comega%29+%3D+M_B%28t%2C+%5Comega%29+%2A+X%5E%7B%282%29%7D%28t%2C%5Comega%29.%0A%5Cend%7Barray%7D+" 
+alt="\begin{array}{l}
+Binary Mask 1  : M_A(t, \omega) = \left\{
+\begin{array}{ll}
+1 & , A_1(t,\omega) > A_2(t,\omega) \\
+0 & , A_1(t,\omega) \leq A_2(t,\omega) \\
+\end{array} \right. ,\\
+Binary Mask 2  :  M_B(t, \omega) = \left\{
+\begin{array}{ll}
+0 & , A_1(t,\omega) > A_2(t,\omega)\\
+1 & , A_1(t,\omega) \leq A_2(t,\omega) \\
+\end{array} \right. , \\
+A's Spectrum : X_A(t, \omega) = M_A(t, \omega) * X^{(1)}(t,\omega), \\
+B's Spectrum : X_B(t, \omega) = M_B(t, \omega) * X^{(2)}(t,\omega).
+\end{array} ">
+
+ここで「*」は要素積を意味します．
+2値の値で周波数の取捨選択(マスキング)を行うことから，この処理は**バイナリマスク**と呼ばれます．
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+M_A" 
+alt="M_A">
+はAさんの音声を，
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Ctextstyle+M_B" 
+alt="M_B">
+はBさんの音声を取り出すためのバイナリマスクになります．
+
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/result.png" width="450px">  
+
+
