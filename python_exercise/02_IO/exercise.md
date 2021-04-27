@@ -30,15 +30,22 @@
 
 フレーム処理は基本的な音声処理手順の１つです．
 音声を短い時間区間(=**フレーム**)に分割して，フレームごとに音声に処理を加えます．
+フレームの長さ(サンプル数)は，一般的に\underline{20～50ms}となるように設定します．
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/framing.png" width="450px">  
 
 ### 2. ウィンドウィング (窓関数処理) とオーバーラップ
 
-処理した音声を，もとの連続音声に戻す際に，フレーム間のつなぎ目が不連続になることがあります．
+フレームごとに分割して処理された信号は，再び時系列につなぎ合わせることで音声信号として復元することが出来ます．
+ただし，処理した信号をそのまま並べただけでは，フレーム間のつなぎ目で音声信号が不連続になる可能性があります．
+信号が不連続になると，復元音声は耳障りで不快なものになります．
 このフレーム間の不連続性を緩和するために，**ウィンドウィング**と**オーバーラップ**を行います．
 図はウィンドウィングとオーバーラップの例です．各フレームに両端が滑らかに減衰するハミング窓を書けたあと，処理を加えます．
 処理されたフレームは，半分ずつずらして加算(=ハーフオーバーラップ)して連続音声を復元します．
+
+窓関数は山なりな形状をもつ関数で，フレーム分割された信号に掛け合わせることで両端をなめらかに減衰させることができます．
+窓関数には形状が異なる数種類のものが存在し，音声信号処理においては一般にハミング窓(Hamming Window)やハニング窓(Hanning Winsow)が用いられます．
+< img src="https://render.githubusercontent.com/render/math?math= w(n) = 0.54 + 0.46 \cos \left( \frac{n}{N}\pi \right) \quad (-N \leq n \leq N)" >
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/processing.png" width="580px">  
 
@@ -54,4 +61,7 @@
 マスキング後の複素周波数スペクトルをIFFTすることで，処理後のフレーム波形を得ることができます．
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/masking.png" width="670px">  
+
+### 4. バイナリマスキングによる音源分離
+
 
