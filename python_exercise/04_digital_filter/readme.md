@@ -1,5 +1,11 @@
 # ディジタルフィルタ設計
 
+ここでは，信号処理について勉強しましょう． 
+まずは説明を読んで，練習問題に取り組みましょう．
+
+   - 説明：信号処理 (このページ)
+   - [練習問題4](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/exercise.md)
+
 ## ディジタルフィルタ
 
 環境の情報をマイクロホンやカメラなどのセンサで取得したとき，それらの情報はアナログ信号に変換されます．
@@ -129,3 +135,50 @@ FIRフィルタの周波数特性は，一般に**ギブス現象**と呼ばれ�
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0Ah_%7Bcw%7D%28n%29+%3D+w_c%28n%29+h_c%28n%29%0A%5Cend%7Balign%2A%7D" >
 
 として，フィルタ係数を用います．
+
+## ハイパス・バンドパスフィルタ
+
+時間信号 : 
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+g%28n%29" >
+のフーリエ変換を，
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+G+%5Cleft%28e%5E%7Bj%5Comega%7D%5Cright%29" >
+とします．
+これを，ここでは
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AG+%5Cleft%28e%5E%7Bj%5Comega%7D%5Cright%29+%3D+%5Cmathcal%7BF%7D+%5Cleft%5B+g%28n%29+%5Cright%5D%0A%5Cend%7Balign%2A%7D" >
+
+と表記することにします．
+このようなフーリエ変換においては，次の**周波数シフト**の性質があります．
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0AG+%5Cleft%28e%5E%7Bj%28%5Comega-%5Comega_0%29%7D%5Cright%29+%3D+%5Cmathcal%7BF%7D+%5Cleft%5B+g%28n%29+%5Ccdot+e%5E%7Bj%5Comega_0+n%7D+%5Cright%5D%0A%5Cend%7Balign%2A%7D" >
+
+この性質を利用すると，ローパスフィルタの係数 : 
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+h_%7B%5Cmathrm%7BLP%7D%7D%28n%29" >
+を，次のように変形することにより，**バンドパスフィルタ**の係数 : 
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+h_%7B%5Cmathrm%7BBP%7D%7D%28n%29" >
+が得られます．
+
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cbegin%7Balign%2A%7D%0Ah_%7B%5Cmathrm%7BBP%7D%7D%28n%29+%3D+h_%7B%5Cmathrm%7BLP%7D%7D%28n%29+%5Ccdot+e%5E%7Bj%5Comega_0+n%7D%0A%5Cend%7Balign%2A%7D" >
+
+ただし，ここでの
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+h_%7B%5Cmathrm%7BBP%7D%7D%28n%29" >
+は，一般に複素数となります．
+実部のみを取り出せば，任意の**中心周波数** : 
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Comega_0%0A" >
+の，バンドパスフィルタの係数が得られます．
+しかし，sin関数とcos関数の足し合わせによって得られる周波数シフトの特性は，
+実部，すなわち，cos関数部のみを取り出すことにより，振幅値が 1/2 に減衰してしまうため，
+係数値を，それぞれ2倍して用いることにより，振幅特性が保持されるという点に，注意する必要があります．
+
+なお，**ハイパスフィルタ**は，上記の周波数シフトにおいて，
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Comega_0+%3D+%5Cpi%0A" >
+[rad/s] の場合に相当します．
+
+## ハイパス・バンドパスフィルタ設計実践
+
+
+
+
+
+
+- [練習問題4](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/exercise.md)
