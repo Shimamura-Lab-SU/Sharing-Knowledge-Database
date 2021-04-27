@@ -1,23 +1,48 @@
 # クラス・関数の定義と使い方
 
-- [CSVファイルの読み出し・書き込み](#CSVファイルの読み書き)
-- [Imageファイルの読み出し・書き込み](#画像ファイルの読み書きと表示)
-- [音声ファイルの読み出し・書き込み](#音声ファイルの読み書き)
-- [matplotlibの使い方](#matplotlibの使い方)
-
-# クラスについて
 
 クラスは関数や変数を内包できる**オブジェクト**です．
 特に，以下の場合には関数ではなくクラスを使うと便利です．
  - 関数に初期値を設定したいとき
  - 内部変数がほしいとき
 
-## 覚えておきたい単語
-
-クラスには特有のワードがあるので，覚えておきましょう．
-
 ### コンストラクタ
 
 初期化関数のこと．`__init__`で定義する．コンストラクタ内部でクラスの内部変数を定義する．
 
-###
+### クラス継承
+
+クラスに新たな内部変数を追加したいとき，あるいはメソッドの一部を変更したいとき，クラス継承を行なうことができる．
+
+例：  
+~~~
+   # 元のクラス
+   class Base_class:
+   
+       def __init__(self, init='カレー'):
+           self.food = init # 初期値の定義
+           
+       def like(self) :
+           print('好きな食べ物は{0}です．'.format(self.food))
+
+　# 継承クラス (継承ク元クラス：Base_class)
+   class New_class(Base_class):
+       
+       # 今回，initは継承する．
+       
+       # 新たなメソッドを追加
+       def dislike(self) :
+           print('嫌いな食べ物は{0}です．'.format(self.food))
+           
+  Food1 = Base_class(init='ラーメン')
+　Food2 = New_class(init='ブロッコリー')
+ 
+  Food1.like()
+　Food2.like()
+　Food2.dislike()
+~~~
+
+# 練習課題
+
+> - [ex3.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/03_object_oriented/ex3.py)
+> - [ex3_blank.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/03_object_oriented/ex3_blank.py)
