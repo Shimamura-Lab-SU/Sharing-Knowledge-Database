@@ -17,7 +17,7 @@ Pythonはインタプリタ言語の一つで，マルチプラットフォー�
   
   第2回：[データの読み込み・書き出しとグラフの表示](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/02_IO)
   
-  第3回：[関数・クラスの定義と使い方](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/03_def_class)
+  第3回：[関数・クラスの定義と使い方](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/03_object_oriented)
   
  ### 応用編
    
