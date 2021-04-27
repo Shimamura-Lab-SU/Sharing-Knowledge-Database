@@ -21,7 +21,7 @@ Pythonはインタプリタ言語の一つで，マルチプラットフォー�
   
  ### 信号処理編
    
-   第4回：回帰・識別問題と解法アプローチ
+   第4回：[フィルタリング](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/04_digital_filter)
    
    第5回：クラスタリング問題と解法アプローチ
    
