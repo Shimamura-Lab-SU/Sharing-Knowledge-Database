@@ -174,11 +174,6 @@ FIRフィルタの周波数特性は，一般に**ギブス現象**と呼ばれ�
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Comega_0+%3D+%5Cpi%0A" >
 [rad/s] の場合に相当します．
 
-## ハイパス・バンドパスフィルタ設計実践
-
-
-
-
-
+# 練習問題
 
 - [練習問題4](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/exercise.md)
