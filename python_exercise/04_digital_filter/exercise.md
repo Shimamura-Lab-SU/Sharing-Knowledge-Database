@@ -11,7 +11,7 @@
 また窓関数を１つ選択し，同じカットオフ周波数，同じフィルタ係数の数をもつローパスフィルタを設計してください．
 これらのフィルタの周波数特性(振幅特性・位相特性)をプロットし，結果を比較してください．
 
-- [LPF.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/TestLPF.py)
+- [TestLPF.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/TestLPF.py)
 
 ## 練習課題2：バンドパス・ハイパスフィルタ設計
 
@@ -23,7 +23,7 @@
 （フィルタ次数）の値は任意に設定してください．
 また，ハイパスフィルタを設計してください．
 
-- [BPF.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/TestBPF.py)
+- [TestBPF.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/TestBPF.py)
 
 ## 練習課題3：フィルタリング
 
@@ -47,3 +47,4 @@
 そして，FFTを用いてフィルタの入出力における周波数成分を調べ，
 時間領域におけるフィルタリング結果と比較してください．
 
+- [TestFiltering.py](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/04_digital_filter/TestFiltering.py)
