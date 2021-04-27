@@ -23,7 +23,7 @@ Pythonはインタプリタ言語の一つで，マルチプラットフォー�
    
    第4回：[信号のフィルタリング](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/tree/master/python_exercise/04_digital_filter)
    
-   第5回：クラスタリング問題と解法アプローチ
+   第5回：部分空間分解法による信号の雑音除去
 
 ## 教材の進め方
 
