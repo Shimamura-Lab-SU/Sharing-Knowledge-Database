@@ -25,10 +25,10 @@
        def like(self) :
            print('好きな食べ物は{0}です．'.format(self.food))
 
-　# 継承クラス (継承ク元クラス：Base_class)
+　# 継承クラス (継承元クラス：Base_class)
    class New_class(Base_class):
        
-       # 今回，initは継承する．
+       # 今回，initはBase_classから継承する．
        
        # 新たなメソッドを追加
        def dislike(self) :
@@ -37,9 +37,9 @@
   Food1 = Base_class(init='ラーメン')
 　Food2 = New_class(init='ブロッコリー')
  
-  Food1.like()
-　Food2.like()
-　Food2.dislike()
+  Food1.like() # Base_classのlikeメソッドを実行
+　Food2.like() # New_classのlikeメソッドを実行
+　Food2.dislike() # New_classのdislikeメソッドを実行
 ~~~
 
 # 練習課題
