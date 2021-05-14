@@ -21,11 +21,12 @@
     過去のサンプルから，次のサンプルを予測することができない信号．確率的にサンプル値が決定される信号のことを指す．  
     例：ガウス性白色信号，一様乱数，バブルノイズ(会話雑音)，音声の子音，画像のランダム模様(木に生えている葉っぱや砂地など)
 
-![信号タイプ](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/signal.png)  
 音声処理や画像処理において，重要な成分の多くは確定信号で近似されます(音声の母音や画像の繰り返し成分)．
-一方で不要な成分(=雑音)の多くは確率信号となります．
+一方で不要な成分(=雑音)の多くは確率信号となります． 
 
-確率信号を
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/signal.png" width="680px"> 
+
+確率信号が
 
 #### 2. 平均と分散
 信号
