@@ -11,10 +11,16 @@ https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/Python-Insta
 
 2. 右上の`Add Configuration`ボタンをクリックする．
 
-3. `Run/Debug Configurations`ウィンドウの左リストにある`Template`から`Pyhon`を選択する．
+3. `Run/Debug Configurations`ウィンドウの左リストの下にある`Edit configuration templates...`をクリックする．
 
-4. `Script path:`のフォルダボタンをクリック，そのままOK．パス欄にプロジェクトのフォルダパスが指定される．  
-<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/00_setting/config.png" width="780px">
+4. `Run/Debug Configuration Templates`ウィンドウから`Pyhon`を選択する．
+
+5. `Script path:`のフォルダボタンをクリック，そのままOK．パス欄にプロジェクトのフォルダパスが指定される．  
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/00_setting/pycharm_config.png" width="780px">
+
+6. `Python interpreter`から適切な仮想環境を選択する．
+
+7. `Working Directory:`のフォルダボタンをクリック，ソースコードの置いてあるフォルダを選択する．
 
 5. `Run/Debug Configurations`ウィンドウの右下のOKをクリック．
 
