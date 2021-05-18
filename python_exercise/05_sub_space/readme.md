@@ -26,7 +26,17 @@
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/signal.png" width="680px"> 
 
-確率信号が
+確率信号
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
+が**確率分布関数**(Probability Distribution Function : PDF)
+<img src="https://render.githubusercontent.com/render/math?math=%5Ctextstyle+p%28x%29%0A">
+に従うとしたとき，
+
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdisplaystyle+%5Cint_%7B%5Cinfty%7D%5E%7B%5Cinfty%7D+p%28x%29+dx+%3D+1%0A">
+
+が成り立つ．
+
 
 #### 2. 平均と分散
 信号
