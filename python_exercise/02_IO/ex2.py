@@ -31,9 +31,10 @@ if __name__ == '__main__':
     ##  - pd.read_csv を用いたcsvファイルの読み込みを行う．
     ##  - 読み込んだcsvファイルはprint()で表示できる．
 
-    #   (csvファイルのダウンロード) ← ローカルへ保存していたら必要なし
-    import urllib.request
-    urllib.request.urlretrieve('https://raw.githubusercontent.com/pandas-dev/pandas/master/pandas/tests/data/iris.csv',
+    #   irisデータの
+    from sklearn.datasets import load_iris
+    iris = load_iris()
+    urllib.request.urlretrieve('https://raw.githubusercontent.com/YosukeSugiura/datamining-excercise/master/3_classification/iris.csv',
                                'iris.csv')  # アイリスデータをwebからダウンロード
 
     #   csvファイルの読み込み・表示
