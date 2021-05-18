@@ -171,6 +171,6 @@ alt="M_A">
 alt="M_B">
 はBさんの音声を取り出すためのバイナリマスクになります．
 
-<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/result.png" width="450px">  
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/02_IO/Speech_Separation4.png" width="620px">  
 
 
