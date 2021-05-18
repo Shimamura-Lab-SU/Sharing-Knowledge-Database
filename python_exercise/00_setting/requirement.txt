@@ -1,8 +1,8 @@
 numpy
 pandas
 scipy
-scilit-learn
-matlibplot
-opencv-python
+scikit-learn
+matplotlib
+opencv
 scikit-image
 soundfile
