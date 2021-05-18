@@ -92,7 +92,7 @@ STFTに絶対値したもの(=**振幅スペクトル**)を時系列で並べた
 
 スペクトログラムは以下のスクリプトで表示できます．
 ```@Python
-import pmatplotlib.pyplot as plt      # pmatplotlib.pyplotモジュールのimport
+import matplotlib.pyplot as plt      # pmatplotlib.pyplotモジュールのimport
 import soundfile as sf                # OpenCVモジュールのimport
 import scipy.signal as sg             # scipy.signalモジュールのimport
 
