@@ -44,13 +44,13 @@
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x_n">
 における平均，分散，共分散は以下の通り計算されます．
 
-**** 平均(期待値) ：    
+#### 平均(期待値) ：    
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdisplaystyle+%5Cbar%7Bx_n%7D+%3D+E%5Bx_n%5D+%3D+%5Cint+x_n+p%28x_n%29+dx_n+%5Csimeq+%5Cfrac%7B1%7D%7BN%7D%5Csum%5E%7BN-1%7D_%7Bi%3D0%7D+x_%7Bn-i%7D">
 
-**** 分散 ：  
+#### 分散 ：  
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+E%5B%28x_n-%5Cbar%7Bx%7D%29%5E2%5D+%5Csimeq+%5Cfrac%7B1%7D%7BN%7D%5Csum%5E%7BN-1%7D_%7Bi%3D0%7D+%28x_n+-+%5Cbar%7Bx%7D%29%5E2%0A">
 
-**** 共分散 ：
+#### 共分散 ：
 
 
 ## 無相関・独立
