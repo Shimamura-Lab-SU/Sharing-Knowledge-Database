@@ -45,6 +45,9 @@
 における平均，分散，共分散は以下の通り計算されます．
 
 #### 平均(期待値) ：    
+確率信号
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
+の平均(期待値)は，取りうる値とその生起確率の積の
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdisplaystyle+%5Cbar%7Bx_n%7D+%3D+E%5Bx_n%5D+%3D+%5Cint+x_n+p%28x_n%29+dx_n+%5Csimeq+%5Cfrac%7B1%7D%7BN%7D%5Csum%5E%7BN-1%7D_%7Bi%3D0%7D+x_%7Bn-i%7D">
 
 #### 分散 ：  
