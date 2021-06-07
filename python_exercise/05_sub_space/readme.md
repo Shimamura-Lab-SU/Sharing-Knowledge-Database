@@ -26,15 +26,20 @@
 
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/signal.png" width="680px"> 
 
+一般に確率信号は，ある**確率分布関数**(Probability Distribution Function : PDF)からランダムにサンプリングした信号列であると仮定できます．
+例えばその確率分布関数が平均0の正規分布のとき，確率信号はガウス性白色雑音になります．
+
 確率信号
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
-が**確率分布関数**(Probability Distribution Function : PDF)
+が確率分布関数
 <img src="https://render.githubusercontent.com/render/math?math=%5Ctextstyle+p%28x%29%0A">
 に従うとしたとき，
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cdisplaystyle+%5Cint_%7B%5Cinfty%7D%5E%7B%5Cinfty%7D+p%28x%29+dx+%3D+1%0A">
 
-が成り立つ．
+が成り立ちます．
+すなわち，あらゆる取りうる値の生起確率を足し合わせると，1になります．
+これは，確率分布が連続分布でも離散分布でも成り立ちます．
 
 
 ### 2. 平均・分散・共分散
@@ -66,12 +71,13 @@
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
 と
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+y%0A">
-の共分散は以下の式で計算される．
+の共分散は以下の式で計算されます．
 
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+Cov%28x%2Cy%29+%3D+E%5B%28x-%5Cbar%7Bx%7D%29%28y-%5Cbar%7By%7D%29%5D%0A" >
 
+ちなみに，共分散には以下の関係が成り立ちます．
 
-
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+Cov%28x_n%2C+y_n%29+%3D+E%5Bx_ny_n%5D+-+E%5Bx_n%5DE%5By_n%5D%0A">
 
 ## 無相関・独立
 
@@ -84,10 +90,15 @@
 
 #### 無相関 ：
 
+２つの確率信号が無相関であるとき，
+
+- <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+E%5Bx_ny_n%5D+%3D+E%5BX_n%5DE%5By_n%5D+%0A" >
+
+- <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+Cov%28x_n%2C+y_n%29+%3D+0%0A">
+
+が成り立ちます．
 
 
-- 独立：
-といいます．
 
 
 
