@@ -89,9 +89,9 @@
 <img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%5Cfrac%7BCov%28x_n%2C+y_n%29%7D%7B%5Csigma_x+%5Csigma_y%7D%0A" >
 
 
-## 無相関・独立
+### 3. 無相関・独立
 
-まず信号間の独立・無相関について説明します．
+最後に，信号間の独立・無相関について説明します．
 独立・無相関は信号処理において特に重要な概念です．
 
 ２つの確率分布関数から生成される確率信号は，互いに**独立**になります．
@@ -167,5 +167,52 @@
 <img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/correlation.png"  width="680px">
 
 
-## 部分空間分解
+## 特異値分解による雑音除去
+
+ここでは，特異値分解を用いた音声のガウス性白色信号の除去を考えます．
+まずは特異値分解について勉強します．
+
+### 特異値分解
+
+**特異値分解**とは，行列を**左特異ベクトル行列，特異値行列，右特異ベクトル行列**の３つの行列に分解するこです．
+式で書くと，以下の通りになります．
+
+<img src=
+"https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+A+%3D+U+%5CSigma+V%5ET%0A" 
+alt="A = U \Gamma V^T
+">
+
+<img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.amazonaws.com%2F0%2F132208%2F0c0b5280-a78a-e7da-c0d3-1b6f2f4e57e7.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=9366910ff897307a540e853633555274"  width="680px">
+
+ここで，Uが左特異ベクトル行列，Vが右特異ベクトル行列，Γが特異値行列となり，すべての行列積を計算すると元の行列が復元できます．
+特異値行列は，対角成分にのみ値をもち，他の要素が0になる**対角行列**です．
+特異値行列の対角成分を**特異値**と呼びます．
+
+特異値分解は固有値分解を深く結びついています．
+固有値分解は正方行列を独立な固有ベクトル群に分解することを意味しますが，
+特異値分解は**正方行列でない行列(M×Nなど)にも適用可能**ですので，より汎用性の高い行列分解です．
+
+特異値分解の物理的な意味は，**分布から相関を最小にする直交座標を見つける**ことを意味します．
+分解したい行列の各列を別の信号とみなして，分布を描きます．その分布上で次元数と同じ数の直交ベクトル群を用意します．
+その直交ベクトル群を回転させて，最も相関が小さくなるところを探します．
+図にイメージを示します．
+ここでは分解したい行列の列数が2である場合を示しています．
+分解したい列数が3以上でも分解可能ですが，図示することは極めて困難になるので割愛します．
+
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/decomposition.png"  width="680px">
+
+
+各行列の意味は以下のとおりです．  
++ U : 直交ベクトルが入った行列  
++ Γ : 各直交ベクトルの大きさが入った対角行列  
++ V : 回転行列
+
+
+
+
+
+ガウス性白色信号は，
+主成分分析は，
+
+
 
