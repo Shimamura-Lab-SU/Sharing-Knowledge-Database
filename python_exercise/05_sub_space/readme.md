@@ -142,11 +142,29 @@
 ### 独立と無相関の違い
 
 独立と無相関の違いについて，同時確率密度関数から確認しましょう．
-図は，
+図は，２つの確率信号の分布を示します．
+各点は，同時刻における確率信号の組
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+%28x_1%2C+y_1%29%2C+%28x_2%2C+y_2%29%2C+%28x_3%2C+y_3%29%2C+%5Cdots%0A">
+を２次元に配置させたものです．
+相関がある場合，同時確率密度分布は斜めの直線に近似されます．
+無相関の場合，同時確率密度分布は軸対称になり，よく「ひし形状」になります．
+相関のある場合と異なり，斜めの直線に近似できませんが，
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
+と
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+y%0A">
+は明らかに関係があります．
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
+が大きい絶対値を取るときに，
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+y%0A">
+は小さな絶対値を取ります．
+逆に
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x%0A">
+が小さい絶対値を取るときに，
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+y%0A">
+は大きな絶対値を取ります．
+独立になるとき，同時確率密度関数は正方形の形状になります．
 
-
-
-
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/correlation.png"  width="680px">
 
 
 ## 部分空間分解
