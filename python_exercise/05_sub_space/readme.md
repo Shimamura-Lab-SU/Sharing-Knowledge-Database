@@ -208,11 +208,23 @@ alt="A = U \Gamma V^T
 + V : 回転行列
 
 
+### 時間ずれ信号の相関
 
+今，ある1次元信号
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x_n%0A">
+と，時間をkだけずらした信号
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+x_{n-k}%0A">
+の相関を考えます．
 
+<img src="https://render.githubusercontent.com/render/math?math=%5Cdisplaystyle+E%5Bx_n+%2A+x_%7Bn-k%7D%5D%0A" >
 
-ガウス性白色信号は，
-主成分分析は，
+kが十分に小さい値のときを考えましょう．
+音声信号などの周期信号で構成される確定信号であれば，1時刻ずれた信号同士は比較的(というよりかなり)近い値を示します．
+音声の波形は，短い時間を取り出して観察すると，非常に緩やかに変化しているのです．
+一方で，ガウス性白色信号などの確率信号であれば，1時刻ずれただけでも全く異なる値を取ります．
+したがって，音声の時間ずれ信号は相関が非常に高く，雑音の時間ずれ信号は相関が非常に低くなります．
+この違いを利用して音声の雑音除去を行いましょう．
 
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/spech_dist.png"  width="680px">
 
-
+### 時間ずれ信号の相関
