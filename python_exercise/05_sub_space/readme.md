@@ -225,6 +225,12 @@ kが十分に小さい値のときを考えましょう．
 したがって，音声の時間ずれ信号は相関が非常に高く，雑音の時間ずれ信号は相関が非常に低くなります．
 この違いを利用して音声の雑音除去を行いましょう．
 
-<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/spech_dist.png"  width="680px">
+<img src="https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/python_exercise/05_sub_space/speech_dist.png"  width="600px">
 
-### 時間ずれ信号の相関
+### 特異値分解を用いた雑音除去
+
+
+
+
+
+
