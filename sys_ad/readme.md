@@ -6,4 +6,4 @@
 
 - [Shareフォルダにアクセスできないときの対応](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/sys_ad/share_folder.md)
 
-- [IPアドレス設定関連](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/IPアドレス設定関連)
+- [IPアドレスの固定方法](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/blob/master/sys_ad/ip.md)
