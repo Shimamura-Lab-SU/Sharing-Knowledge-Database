@@ -1,0 +1,9 @@
+# システム管理関連
+
+システム管理者は随時情報を更新してください．
+
+- [停電時のメールサーバの対応](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/停電時のメールサーバの対応)
+
+- [Shareフォルダにアクセスできないときの対応](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/Shareフォルダにアクセスできないときの対応)
+
+- [IPアドレス設定関連](https://github.com/Shimamura-Lab-SU/Sharing-Knowledge-Database/wiki/IPアドレス設定関連)
